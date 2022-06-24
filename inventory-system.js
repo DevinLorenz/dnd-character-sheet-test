@@ -30,12 +30,15 @@ let amulet = `Amulet of Osiris`
 
 //Logging character information.
 console.log()
+
 console.log(`Character: ${heroName}`)
 console.log(`Level ${level} ${race} ${characterClass} - ${subClass}`)
+
 console.log()
 
 
 console.log()
+
 console.log('Ability Scores:')
 
 console.log()
@@ -49,9 +52,11 @@ console.log(`     Charisma: 9 | ${charisma}`)
 
 console.log()
 console.log()
+
 console.log(`Initiative: +${initiative}    AC:${armorClass}`)
+
 console.log()
-console.log(`----------------------------------------`)
+    console.log(`----------------------------------------`)
 
 //good. now lets push potions and rations to backpack.
 
@@ -63,8 +68,9 @@ let backPackSlots = backPack.length
 
 //Lets console log the items in the backpack and how many items out of 10 there are.
 console.log()
+
 console.log(`Backpack inventory: ${backPack}`)
-console.log(`Space: ${backPackSlots}/10`)
+    console.log(`Space: ${backPackSlots}/10`)
 
 //Now lets equip some items.
 
@@ -73,5 +79,31 @@ equipped.push(weapon,amulet,armor,clothes)
 let equippedSlots = equipped.length
 
 console.log()
+
 console.log(`Equipped: ${equipped}`)
-console.log(`Space: ${equippedSlots}/6`)
+    console.log(`Space: ${equippedSlots}/6`)
+
+console.log()
+console.log(`----------------------------------------`)
+console.log()
+
+console.log(`You Attack! Roll to hit!`)
+console.log()
+
+let longSwordDamage = Math.floor((Math.random() * 10) + 1) + 5;
+let longSwordAttack = Math.floor((Math.random() * 20) + 1) + 8
+
+if((longSwordAttack - 8) <= 1){
+    console.log('Critical Failure!')
+    console.log(`You fumble and drop your sword!`)   
+} else if (longSwordAttack <= 14){ 
+    console.log(`You swing your sword for a ${longSwordAttack} and miss!`)
+} else if(longSwordAttack > 27){
+    console.log('Critical Hit!')
+    console.log(`You do ${longSwordDamage * 2 - 5} points of critical slashing damage!`)
+} else {    console.log(`You swing your sword for a ${longSwordAttack} to hit!`)
+            console.log(`You do ${longSwordDamage} points of slashing damage!`)  
+}
+
+
+
